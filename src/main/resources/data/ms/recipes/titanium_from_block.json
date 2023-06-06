@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "titanium",
+  "ingredients": [
+    {
+      "item": "ms:titanium_block"
+    }
+  ],
+  "result": {
+    "item": "ms:titanium",
+    "count": 9
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ii",
+    "/i",
+    "/ "
+  ],
+  "key": {
+    "i": {
+      "item": "ms:titanium"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "ms:titanium_axe",
+    "count": 1
+  },
+  "group": "titanium"
+}

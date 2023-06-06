@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "i i"
+  ],
+  "key": {
+    "i": {
+      "item": "ms:titanium"
+    }
+  },
+  "result": {
+    "item": "ms:titanium_helmet",
+    "count": 1
+  },
+  "group": "titanium"
+}

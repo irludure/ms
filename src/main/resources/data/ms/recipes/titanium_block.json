@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "ms:titanium"
+    },
+    {
+      "item": "ms:titanium"
+    },
+    {
+      "item": "ms:titanium"
+    },
+    {
+      "item": "ms:titanium"
+    },
+    {
+      "item": "ms:titanium"
+    },
+    {
+      "item": "ms:titanium"
+    },
+    {
+      "item": "ms:titanium"
+    },
+    {
+      "item": "ms:titanium"
+    },
+    {
+      "item": "ms:titanium"
+    }
+  ],
+  "result": {
+    "item": "ms:titanium_block",
+    "count": 1
+  },
+  "group": "titanium"
+}

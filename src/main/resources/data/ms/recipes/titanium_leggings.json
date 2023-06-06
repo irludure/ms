@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "i i",
+    "i i"
+  ],
+  "key": {
+    "i": {
+      "item": "ms:titanium"
+    }
+  },
+  "result": {
+    "item": "ms:titanium_leggings",
+    "count": 1
+  },
+  "group": "titanium"
+}

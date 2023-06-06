@@ -1,0 +1,22 @@
+{
+  "alternate":{"category":"music","sounds":["ms:alternate"]},
+  "gardenhangout":{"category":"music","sounds":["ms:gardenhangout"]},
+  "toweringheights":{"category":"music","sounds":["ms:toweringheights"]},
+  "savetheworld":{"category":"master","sounds":["ms:savetheworld"],
+    "dustycavern":{"category":"master","sounds":["ms:dustycavern"]}},
+  "messagefromhell":{"category":"music","sounds":["ms:messagefromhell"]},
+  "channeledanger":{"category":"music","sounds":["ms:channeledanger"]},
+  "firedome":{"category":"music","sounds":["ms:firedome"]},
+  "frozenriver":{"category":"music","sounds":["ms:frozenriver"]},
+  "ageofthedesert":{"category":"music","sounds":["ms:ageofthedesert"]},
+  "ancientwell":{"category":"music","sounds":["ms:ancientwell"]},
+  "fallingfeathers":{"category":"music","sounds":["ms:fallingfeathers"]},
+  "impendingdoom":{"category":"music","sounds":["ms:impendingdoom"]},
+  "leafyplanting":{"category":"music","sounds":["ms:leafyplanting"]},
+  "peacefultrack":{"category":"music","sounds":["ms:peacefultrack"]},
+  "quickarcade":{"category":"music","sounds":["ms:quickarcade"]},
+  "dustycavern":{"category":"music","sounds":["ms:dustycavern"]},
+  "gangnamstyle":{"category":"music","sounds":[{"name":"ms:gangnamstyle","stream": true}]},
+  "teleport":{"subtitle": "sfx.teleport","category":"master","sounds":["ms:teleport"]},
+  "elephant_ambient": {"subtitle": "elephant.ambient", "category":"master", "sounds": ["ms:elephant_ambient"]}
+}

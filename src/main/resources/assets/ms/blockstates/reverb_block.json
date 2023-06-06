@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model":  "ms:block/reverb_block" }
+  }
+}
