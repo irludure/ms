@@ -17,12 +17,12 @@ import net.minecraftforge.event.world.BiomeLoadingEvent;
 public class OreFeature {
     public static Holder<PlacedFeature> OVERWORLD_OREGEN;
     public static void registerOreFeatures() {
-        OreConfiguration overworldConfig = new OreConfiguration(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.TITANIUM_REMNANT.get().defaultBlockState(), 4);
+        OreConfiguration overworldConfig = new OreConfiguration(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.TITANIUM_REMNANT.get().defaultBlockState(), 9);
         OVERWORLD_OREGEN = registerPlacedOreFeature("overworld_titanium_remnant", new ConfiguredFeature<>(Feature.ORE, overworldConfig),
                 CountPlacement.of(2), // Veins per chunk
-                InSquarePlacement.spread(),
+                InSquarePlacement.spread(), // Chooses what uniform the ore spawns in. Look at ore spawn graphs online for reference.
                 BiomeFilter.biome(), // Biome filter
-                HeightRangePlacement.uniform(VerticalAnchor.absolute(-45), VerticalAnchor.absolute(0))); // -45 is the lowest Y-level titanium can spawn at, and 0 is the highest.
+                HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(0))); // -60 is the lowest Y-level titanium can spawn at, and 0 is the highest.
     }
 
     private static <C extends FeatureConfiguration, F extends Feature<C>> Holder<PlacedFeature> registerPlacedOreFeature(String registryName, ConfiguredFeature<C, F> feature, PlacementModifier... placementModifiers) {
