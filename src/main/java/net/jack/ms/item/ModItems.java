@@ -25,11 +25,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> GANGNAM_STYLE_RECORD = ITEMS.register("gangnam_style_music_disc", () -> new RecordItem(4, () -> ModSounds.gangnamstyle.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
 
-    public static final RegistryObject<SwordItem> TITANIUM_SWORD = ITEMS.register("titanium_sword", () -> new SwordItem(ModToolTiers.TITANIUM, 6, -2.5F, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
+    public static final RegistryObject<SwordItem> TITANIUM_SWORD = ITEMS.register("titanium_sword", () -> new SwordItem(ModToolTiers.TITANIUM, 5, -2.5F, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
     public static final RegistryObject<PickaxeItem> TITANIUM_PICKAXE = ITEMS.register("titanium_pickaxe", () -> new PickaxeItem(ModToolTiers.TITANIUM, 2, -2.8F, new Item.Properties().tab(CreativeModeTab.TAB_TOOLS)));
 
-    public static final RegistryObject<AxeItem> TITANIUM_AXE = ITEMS.register("titanium_axe", () -> new AxeItem(ModToolTiers.TITANIUM, 12.0F, -2.8F, new Item.Properties().tab(CreativeModeTab.TAB_TOOLS)));
+    public static final RegistryObject<AxeItem> TITANIUM_AXE = ITEMS.register("titanium_axe", () -> new AxeItem(ModToolTiers.TITANIUM, 10.0F, -2.8F, new Item.Properties().tab(CreativeModeTab.TAB_TOOLS)));
 
     public static final RegistryObject<ShovelItem> TITANIUM_SHOVEL = ITEMS.register("titanium_shovel", () -> new ShovelItem(ModToolTiers.TITANIUM, 3.0F, -3.0F, new Item.Properties().tab(CreativeModeTab.TAB_TOOLS)));
 

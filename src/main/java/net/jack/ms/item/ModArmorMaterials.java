@@ -13,11 +13,11 @@ public enum ModArmorMaterials implements ArmorMaterial {
     TITANIUM(
             "titanium",
             200,
-            new int[]{4, 8, 10, 3},
+            new int[]{4, 7, 9, 3},
             15,
             SoundEvents.ARMOR_EQUIP_NETHERITE,
-            4.0F,
-            0.15F,
+            3.5F,
+            1.5F,
             () -> Ingredient.of(ModItems.TITANIUM.get())
     );
 
