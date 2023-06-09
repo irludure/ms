@@ -21,7 +21,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 
 
-version = '0.0.1-1.18.2'
+version = '3.0-1.18.2'
 group = 'net.jack.ms' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'ms'
 

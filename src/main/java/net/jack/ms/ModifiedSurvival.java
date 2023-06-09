@@ -3,10 +3,7 @@ package net.jack.ms;
 import com.mojang.logging.LogUtils;
 import net.jack.ms.block.ModBlocks;
 import net.jack.ms.entity.ModEntityTypes;
-import net.jack.ms.entity.client.ElephantRenderer;
-import net.jack.ms.entity.client.MonkeyRenderer;
-import net.jack.ms.entity.client.RaccoonRenderer;
-import net.jack.ms.entity.client.TigerRenderer;
+import net.jack.ms.entity.client.*;
 import net.jack.ms.item.ModItems;
 import net.jack.ms.sound.ModSounds;
 import net.jack.ms.world.feature.ModConfiguredFeatures;
@@ -70,6 +67,7 @@ public class ModifiedSurvival
         EntityRenderers.register(ModEntityTypes.MONKEY.get(), MonkeyRenderer::new);
         EntityRenderers.register(ModEntityTypes.TIGER.get(), TigerRenderer::new);
         EntityRenderers.register(ModEntityTypes.ELEPHANT.get(), ElephantRenderer::new);
+        EntityRenderers.register(ModEntityTypes.VOID_MONKEY.get(), VoidMonkeyRenderer::new);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -89,7 +87,7 @@ public class ModifiedSurvival
                     Animal::checkMobSpawnRules);
             SpawnPlacements.register(ModEntityTypes.ELEPHANT.get(),
                     SpawnPlacements.Type.ON_GROUND,
-                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Heightmap.Types.MOTION_BLOCKING,
                     Animal::checkAnimalSpawnRules);
         });
     }

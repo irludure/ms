@@ -15,7 +15,7 @@ import java.util.List;
 public class ModEntityGeneration {
     public static void onEntitySpawn(final BiomeLoadingEvent event) {
         addEntityToSpecificBiomes(event, ModEntityTypes.MONKEY.get(),
-                10, 3, 7, Biomes.SAVANNA);
+                15, 3, 7, Biomes.SAVANNA);
         addEntityToAllOverworldBiomes(event, ModEntityTypes.MONKEY.get(),
                 1, 1, 3);
         addEntityToSpecificBiomes(event, ModEntityTypes.RACCOON.get(),
@@ -27,7 +27,7 @@ public class ModEntityGeneration {
          addEntityToSpecificBiomes(event, ModEntityTypes.TIGER.get(),
                 3, 1, 3, Biomes.FOREST);
          addEntityToSpecificBiomes(event, ModEntityTypes.ELEPHANT.get(),
-                 15, 1, 3, Biomes.SAVANNA);
+                 20, 1, 3, Biomes.SAVANNA);
     }
 
     private static void addEntityToAllBiomesExceptThese(BiomeLoadingEvent event, EntityType<?> type,

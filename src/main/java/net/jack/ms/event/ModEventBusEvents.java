@@ -3,10 +3,7 @@ package net.jack.ms.event;
 import net.jack.ms.ModifiedSurvival;
 import net.jack.ms.entity.ModEntityTypes;
 import net.jack.ms.entity.client.MonkeyRenderer;
-import net.jack.ms.entity.custom.ElephantEntity;
-import net.jack.ms.entity.custom.MonkeyEntity;
-import net.jack.ms.entity.custom.RaccoonEntity;
-import net.jack.ms.entity.custom.TigerEntity;
+import net.jack.ms.entity.custom.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
@@ -31,5 +28,6 @@ public class ModEventBusEvents {
         event.put(ModEntityTypes.MONKEY.get(), MonkeyEntity.setAttributes());
         event.put(ModEntityTypes.TIGER.get(), TigerEntity.setAttributes());
         event.put(ModEntityTypes.ELEPHANT.get(), ElephantEntity.setAttributes());
+        event.put(ModEntityTypes.VOID_MONKEY.get(), VoidMonkeyEntity.setAttributes());
     }
 }

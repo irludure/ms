@@ -19,7 +19,7 @@ public class VoidMonkeyRenderer extends GeoEntityRenderer<VoidMonkeyEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(VoidMonkeyEntity instance) {
-        return new ResourceLocation(ModifiedSurvival.MOD_ID, "textures/entity/monkey/monkey.png");
+        return new ResourceLocation(ModifiedSurvival.MOD_ID, "textures/entity/monkey/void_monkey.png");
     }
     @Override
     public RenderType getRenderType(VoidMonkeyEntity animatable, float partialTicks, PoseStack stack,

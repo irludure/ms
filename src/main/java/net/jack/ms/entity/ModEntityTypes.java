@@ -27,7 +27,7 @@ public class ModEntityTypes {
 
     public static final RegistryObject<EntityType<VoidMonkeyEntity>> VOID_MONKEY =
             ENTITY_TYPES.register("void_monkey",
-                    () -> EntityType.Builder.of(VoidMonkeyEntity::new, MobCategory.MONSTER)
+                    () -> EntityType.Builder.of(VoidMonkeyEntity::new, MobCategory.CREATURE)
                             .sized(1.05f, 1.2f)
                             .build(new ResourceLocation(ModifiedSurvival.MOD_ID, "void_monkey").toString()));
     public static final RegistryObject<EntityType<TigerEntity>> TIGER =

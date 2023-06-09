@@ -19,7 +19,7 @@ public class OreFeature {
     public static void registerOreFeatures() {
         OreConfiguration overworldConfig = new OreConfiguration(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.TITANIUM_REMNANT.get().defaultBlockState(), 9);
         OVERWORLD_OREGEN = registerPlacedOreFeature("overworld_titanium_remnant", new ConfiguredFeature<>(Feature.ORE, overworldConfig),
-                CountPlacement.of(2), // Veins per chunk
+                CountPlacement.of(4), // Veins per chunk
                 InSquarePlacement.spread(), // Chooses what uniform the ore spawns in. Look at ore spawn graphs online for reference.
                 BiomeFilter.biome(), // Biome filter
                 HeightRangePlacement.uniform(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(0))); // -60 is the lowest Y-level titanium can spawn at, and 0 is the highest.

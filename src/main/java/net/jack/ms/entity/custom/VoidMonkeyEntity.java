@@ -42,6 +42,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import java.util.UUID;
 
 import static net.jack.ms.entity.ModEntityTypes.MONKEY;
+import static net.jack.ms.entity.ModEntityTypes.VOID_MONKEY;
 
 public class VoidMonkeyEntity extends Animal implements IAnimatable {
 
@@ -87,7 +88,7 @@ public class VoidMonkeyEntity extends Animal implements IAnimatable {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob mob) {
-        return MONKEY.get().create(serverLevel);
+        return VOID_MONKEY.get().create(serverLevel);
     }
 
 
