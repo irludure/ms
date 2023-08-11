@@ -17,6 +17,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
             public static final RegistryObject<Item> BANANA = ITEMS.register("banana",
             () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(ModFoods.BANANA).stacksTo(16)));
+    public static final RegistryObject<Item> HOMEOSTASIS_ACCELERATOR = ITEMS.register("homeostasis_accelerator",
+            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(ModFoods.HOMEOSTASIS_ACCELERATOR).stacksTo(8)));
     public static final RegistryObject<Item> REVERB_FRAGMENT = ITEMS.register("reverb_fragment", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
 
     public static final RegistryObject<Item> TITANIUM_FRAGMENT = ITEMS.register("titanium_fragment", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
