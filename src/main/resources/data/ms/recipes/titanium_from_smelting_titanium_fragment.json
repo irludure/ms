@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "ms:titanium_fragment"
-  },
-  "result": "ms:titanium",
-  "experience": 3,
-  "cookingtime": 200
-}
