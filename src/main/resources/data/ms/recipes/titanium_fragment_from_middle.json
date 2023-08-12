@@ -7,11 +7,11 @@
   ],
   "key": {
     "i": {
-      "item": "ms:titanium"
+      "item": "ms:titanium_fragment"
     }
   },
   "result": {
-    "item": "ms:titanium_ingot",
+    "item": "ms:titanium",
     "count": 1
   },
   "group": "titanium"
