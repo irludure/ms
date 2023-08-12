@@ -1,6 +1,7 @@
 package net.jack.ms.ai.goal;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -8,7 +9,9 @@ import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -34,16 +37,20 @@ public class SlaveGoToOwner extends Goal {
 
     @Override
     public boolean canUse() {
-        Player playerentity = this.entity.level.getNearestPlayer(this.entity, 300.0D);
-        if (playerentity != null) {
-            boolean con = getDist(this.entity.getOnPos(), playerentity.getOnPos()) > 20;
-            boolean con2 = getDist(this.entity.getOnPos(), playerentity.getOnPos()) < 100;
-            if (con && con2) {
-                this.target = playerentity;
-                return true;
+        List<Player> players = this.entity.level.getNearbyPlayers(TargetingConditions.DEFAULT, this.entity, AABB.ofSize(new Vec3(this.entity.getX(), this.entity.getY(), this.entity.getZ()), 100, 100, 100));
+
+        for (int i = 0; i < players.size(); i++) {
+            Player playerentity = players.get(i);
+            if (playerentity != null) {
+                boolean con = getDist(this.entity.getOnPos(), playerentity.getOnPos()) > 20;
+                boolean con2 = !(playerentity.getName().equals(new TextComponent("irludureYT")));
+                if (con && con2) {
+                    this.target = playerentity;
+                    return true;
+                }
             }
-            return false;
         }
+        this.target = null;
         return false;
     }
 
@@ -69,15 +76,18 @@ public class SlaveGoToOwner extends Goal {
 
     @Override
     public boolean canContinueToUse() {
-        Player playerentity = this.entity.level.getNearestPlayer(this.entity, 100.0D);
-        if (playerentity != null) {
-            boolean con = getDist(this.entity.getOnPos(), playerentity.getOnPos()) > 20;
-            if (con) {
-                this.target = playerentity;
-                return true;
+        List<Player> players = this.entity.level.getNearbyPlayers(TargetingConditions.DEFAULT, this.entity, AABB.ofSize(new Vec3(this.entity.getX(), this.entity.getY(), this.entity.getZ()), 100, 100, 100));
+
+        for (int i = 0; i < players.size(); i++) {
+            Player playerentity = players.get(i);
+            if (playerentity != null) {
+                boolean con = getDist(this.entity.getOnPos(), playerentity.getOnPos()) > 20;
+                boolean con2 = !(playerentity.getName().equals(new TextComponent("irludureYT")));
+                if (con && con2) {
+                    this.target = playerentity;
+                    return true;
+                }
             }
-            this.target = null;
-            return false;
         }
         this.target = null;
         return false;
