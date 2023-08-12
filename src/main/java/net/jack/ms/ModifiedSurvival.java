@@ -1,6 +1,7 @@
 package net.jack.ms;
 
 import com.mojang.logging.LogUtils;
+import net.jack.ms.ai.SlaveVillager;
 import net.jack.ms.block.ModBlocks;
 import net.jack.ms.entity.ModEntityTypes;
 import net.jack.ms.entity.client.*;
@@ -60,6 +61,7 @@ public class ModifiedSurvival
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(OreFeature::onBiomeLoadingEvent);
+        MinecraftForge.EVENT_BUS.register(new SlaveVillager());
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
