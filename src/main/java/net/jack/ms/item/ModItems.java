@@ -1,8 +1,11 @@
 package net.jack.ms.item;
 
 import net.jack.ms.ModifiedSurvival;
+import net.jack.ms.entity.custom.MotorboatEntity;
+import net.jack.ms.item.custom.IndustrialBoatItem;
 import net.jack.ms.sound.ModSounds;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -27,6 +30,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> GANGNAM_STYLE_RECORD = ITEMS.register("gangnam_style_music_disc", () -> new RecordItem(4, () -> ModSounds.gangnamstyle.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
 
+    public static final RegistryObject<Item> COOLWHIP_ELEVEN_RECORD = ITEMS.register("coolwhip_eleven_music_disc", () -> new RecordItem(4, () -> ModSounds.coolwhip_eleven.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
+
+    public static final RegistryObject<Item> BRO_GET_ON_MODIFIED_RECORD = ITEMS.register("bro_get_on_modified_music_disc", () -> new RecordItem(4, () -> ModSounds.bro_get_on_modified.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
+
+
+
     public static final RegistryObject<SwordItem> TITANIUM_SWORD = ITEMS.register("titanium_sword", () -> new SwordItem(ModToolTiers.TITANIUM, 5, -2.5F, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
     public static final RegistryObject<PickaxeItem> TITANIUM_PICKAXE = ITEMS.register("titanium_pickaxe", () -> new PickaxeItem(ModToolTiers.TITANIUM, 2, -2.8F, new Item.Properties().tab(CreativeModeTab.TAB_TOOLS)));
@@ -44,6 +53,11 @@ public class ModItems {
     public static final RegistryObject<Item> TITANIUM_LEGGINGS = ITEMS.register("titanium_leggings", () -> new ArmorItem(ModArmorMaterials.TITANIUM, EquipmentSlot.LEGS, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
     public static final RegistryObject<Item> TITANIUM_BOOTS = ITEMS.register("titanium_boots", () -> new ArmorItem(ModArmorMaterials.TITANIUM, EquipmentSlot.FEET, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
+
+    public static final RegistryObject<Item> INDUSTRIAL_BOAT = ITEMS.register("industrial_boat", () -> new IndustrialBoatItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> WIRE = ITEMS.register("wire", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
+
 
 
     public static void register(IEventBus eventBus) {

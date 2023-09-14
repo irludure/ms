@@ -7,21 +7,20 @@ import net.jack.ms.entity.ModEntityTypes;
 import net.jack.ms.entity.client.*;
 import net.jack.ms.item.ModItems;
 import net.jack.ms.sound.ModSounds;
-import net.jack.ms.world.feature.ModConfiguredFeatures;
-import net.jack.ms.world.feature.OreFeature;
+import net.jack.ms.util.world.feature.OreFeature;
+import net.jack.ms.vehicle.ReplaceMinecarts;
+import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.client.renderer.entity.MinecartRenderer;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -35,7 +34,7 @@ public class ModifiedSurvival
 {
     public static final String MOD_ID = "ms";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public ModifiedSurvival()
     {
@@ -56,12 +55,11 @@ public class ModifiedSurvival
 
 
         GeckoLib.initialize();
-
-
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.addListener(OreFeature::onBiomeLoadingEvent);
         MinecraftForge.EVENT_BUS.register(new SlaveVillager());
+        MinecraftForge.EVENT_BUS.register(new ReplaceMinecarts());
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
@@ -70,6 +68,9 @@ public class ModifiedSurvival
         EntityRenderers.register(ModEntityTypes.TIGER.get(), TigerRenderer::new);
         EntityRenderers.register(ModEntityTypes.ELEPHANT.get(), ElephantRenderer::new);
         EntityRenderers.register(ModEntityTypes.VOID_MONKEY.get(), VoidMonkeyRenderer::new);
+        EntityRenderers.register(ModEntityTypes.FAST_MINECART.get(),
+                context -> new MinecartRenderer<>(context, ModelLayers.MINECART));
+        EntityRenderers.register(ModEntityTypes.MOTORBOAT.get(), MotorboatRenderer::new);
     }
 
     private void setup(final FMLCommonSetupEvent event) {

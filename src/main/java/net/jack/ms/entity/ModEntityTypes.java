@@ -41,6 +41,26 @@ public class ModEntityTypes {
                             .sized(3.2f, 4f)
                             .build(new ResourceLocation(ModifiedSurvival.MOD_ID, "elephant").toString()));
 
+    public static final RegistryObject<EntityType<FastMinecart>> FAST_MINECART =
+            ENTITY_TYPES.register("fast_minecart",
+                    () -> EntityType.Builder.<FastMinecart>of(FastMinecart::new, MobCategory.MISC)
+                            .sized(0.98F, 0.7F)  // you can adjust these sizes
+                            .setTrackingRange(80)
+                            .setUpdateInterval(3)
+                            .setShouldReceiveVelocityUpdates(true)
+                            .build(new ResourceLocation(ModifiedSurvival.MOD_ID, "fast_minecart").toString())
+            );
+
+    public static final RegistryObject<EntityType<MotorboatEntity>> MOTORBOAT =
+            ENTITY_TYPES.register("motorboat",
+                    () -> EntityType.Builder.<MotorboatEntity>of(MotorboatEntity::new, MobCategory.MISC)
+                            .sized(1.375F, 0.5625F)  // you can adjust these sizes
+                            .setTrackingRange(10)
+                            .setUpdateInterval(3)
+                            .setShouldReceiveVelocityUpdates(true)
+                            .build(new ResourceLocation(ModifiedSurvival.MOD_ID, "motorboat").toString())
+            );
+    // public static final EntityType<Boat> BOAT = register("boat", EntityType.Builder.<Boat>of(Boat::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

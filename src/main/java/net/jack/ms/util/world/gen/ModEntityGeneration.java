@@ -1,4 +1,4 @@
-package net.jack.ms.world.gen;
+package net.jack.ms.util.world.gen;
 
 import net.jack.ms.entity.ModEntityTypes;
 import net.minecraft.resources.ResourceKey;

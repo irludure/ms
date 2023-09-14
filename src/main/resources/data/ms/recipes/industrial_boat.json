@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i i",
+    "iii",
+    "|r|"
+  ],
+  "key": {
+    "|": {
+      "item": "ms:wire"
+    },
+    "i": {
+      "item": "minecraft:deepslate"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "ms:industrial_boat",
+    "count": 1
+  }
+}

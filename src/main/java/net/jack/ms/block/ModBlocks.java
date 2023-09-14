@@ -1,6 +1,7 @@
 package net.jack.ms.block;
 
 import net.jack.ms.ModifiedSurvival;
+import net.jack.ms.block.custom.FusionRail;
 import net.jack.ms.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -34,6 +35,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> REVERB_BLOCK = registerBlock("reverb_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(8f).requiresCorrectToolForDrops().lightLevel(reverbLightLevel)), CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> FUSION_RAIL = registerBlock("fusion_rail",
+            () -> new FusionRail(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(2f).lightLevel(reverbLightLevel)), CreativeModeTab.TAB_MISC);
 
 
 

@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "net.jack.ms.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "MixinEntity"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "ms.mixin-refmap.json"
+}

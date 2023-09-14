@@ -33,6 +33,10 @@ import net.minecraftforge.registries.RegistryObject;
 /* 30 */   public static final RegistryObject<SoundEvent> savetheworld = registerSoundEvent("savetheworld");
 /* 31 */   public static final RegistryObject<SoundEvent> toweringheights = registerSoundEvent("toweringheights");
 /* 32 */   public static final RegistryObject<SoundEvent> gangnamstyle = registerSoundEvent("gangnamstyle");
+           public static final RegistryObject<SoundEvent> coolwhip_eleven = registerSoundEvent("coolwhip_eleven");
+        public static final RegistryObject<SoundEvent> bro_get_on_modified = registerSoundEvent("get_on_modified");
+
+
 /* 33 */   public static final RegistryObject<SoundEvent> teleport = registerSoundEvent("teleport");
     public static final RegistryObject<SoundEvent> elephant_ambient = registerSoundEvent("elephant_ambient");
 /*    */   

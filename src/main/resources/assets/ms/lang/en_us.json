@@ -15,16 +15,27 @@
   "item.ms.titanium_boots": "Titanium Boots",
   "item.ms.homeostasis_accelerator": "Drug - HSTS",
   "item.ms.homeostasis_accelerator.desc": "This drug is commonly used as a way to speed up homeostasis, primarily for body temperature regulation. If you have taken more than one at a time, seek treatment immediately.",
+  "item.ms.industrial_boat": "Industrial Boat",
+  "item.ms.wire": "Wire",
   "block.ms.titanium_remnant": "Titanium Remnant",
   "block.ms.titanium_block": "Titanium Block",
+
   "item.ms.gangnam_style_music_disc": "§bMusic Disc",
   "item.ms.gangnam_style_music_disc.desc": "PSY - Gangnam Style",
+
+  "item.ms.coolwhip_eleven_music_disc": "§bMusic Disc",
+  "item.ms.coolwhip_eleven_music_disc.desc": "irludure - Cool Whip Eleven",
+
+  "item.ms.bro_get_on_modified_music_disc": "§bMusic Disc",
+  "item.ms.bro_get_on_modified_music_disc.desc": "irludure - Get on Modified",
+
   "entity.ms.raccoon": "Raccoon",
   "entity.ms.monkey": "Monkey",
   "entity.ms.void_monkey": "Void Monkey",
   "entity.ms.tiger": "Tiger",
   "entity.ms.elephant": "Elephant",
   "entity.ms.eagle": "Eagle",
+  "entity.ms.motorboat": "Industrial Boat",
   "block.ms.reverb_block": "Reverb Block",
   "sfx.teleport": "Teleportation"
 }

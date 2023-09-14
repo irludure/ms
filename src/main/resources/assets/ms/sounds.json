@@ -18,5 +18,7 @@
   "dustycavern":{"category":"music","sounds":["ms:dustycavern"]},
   "gangnamstyle":{"category":"music","sounds":[{"name":"ms:gangnamstyle","stream": true}]},
   "teleport":{"subtitle": "sfx.teleport","category":"master","sounds":["ms:teleport"]},
-  "elephant_ambient": {"subtitle": "elephant.ambient", "category":"master", "sounds": ["ms:elephant_ambient"]}
+  "elephant_ambient": {"subtitle": "elephant.ambient", "category":"master", "sounds": ["ms:elephant_ambient"]},
+  "coolwhip_eleven":{"category":"music","sounds":[{"name":"ms:coolwhip_eleven","stream": true}]},
+  "get_on_modified":{"category":"music","sounds":[{"name":"ms:get_on_modified","stream": true}]}
 }

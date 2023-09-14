@@ -1,7 +1,7 @@
-package net.jack.ms.world;
+package net.jack.ms.util.world;
 
 import net.jack.ms.ModifiedSurvival;
-import net.jack.ms.world.gen.ModEntityGeneration;
+import net.jack.ms.util.world.gen.ModEntityGeneration;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
