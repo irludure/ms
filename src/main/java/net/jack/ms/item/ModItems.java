@@ -34,8 +34,6 @@ public class ModItems {
 
     public static final RegistryObject<Item> BRO_GET_ON_MODIFIED_RECORD = ITEMS.register("bro_get_on_modified_music_disc", () -> new RecordItem(4, () -> ModSounds.bro_get_on_modified.get(), new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
 
-
-
     public static final RegistryObject<SwordItem> TITANIUM_SWORD = ITEMS.register("titanium_sword", () -> new SwordItem(ModToolTiers.TITANIUM, 5, -2.5F, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
     public static final RegistryObject<PickaxeItem> TITANIUM_PICKAXE = ITEMS.register("titanium_pickaxe", () -> new PickaxeItem(ModToolTiers.TITANIUM, 2, -2.8F, new Item.Properties().tab(CreativeModeTab.TAB_TOOLS)));
@@ -57,6 +55,8 @@ public class ModItems {
     public static final RegistryObject<Item> INDUSTRIAL_BOAT = ITEMS.register("industrial_boat", () -> new IndustrialBoatItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
     public static final RegistryObject<Item> WIRE = ITEMS.register("wire", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
+
+    public static final RegistryObject<Item> URANIUM = ITEMS.register("uranium", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
 
 

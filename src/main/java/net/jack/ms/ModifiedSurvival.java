@@ -3,6 +3,7 @@ package net.jack.ms;
 import com.mojang.logging.LogUtils;
 import net.jack.ms.ai.SlaveVillager;
 import net.jack.ms.block.ModBlocks;
+import net.jack.ms.block.entity.ModBlockEntities;
 import net.jack.ms.entity.ModEntityTypes;
 import net.jack.ms.entity.client.*;
 import net.jack.ms.item.ModItems;
@@ -42,9 +43,12 @@ public class ModifiedSurvival
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         ModSounds.register(modEventBus);
+
         ModEntityTypes.register(modEventBus);
 
 
