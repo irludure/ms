@@ -7,9 +7,12 @@ import net.jack.ms.block.entity.ModBlockEntities;
 import net.jack.ms.entity.ModEntityTypes;
 import net.jack.ms.entity.client.*;
 import net.jack.ms.item.ModItems;
+import net.jack.ms.screen.ModMenuTypes;
+import net.jack.ms.screen.RadiationTableScreen;
 import net.jack.ms.sound.ModSounds;
 import net.jack.ms.util.world.feature.OreFeature;
 import net.jack.ms.vehicle.ReplaceMinecarts;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.MinecartRenderer;
@@ -45,7 +48,9 @@ public class ModifiedSurvival
         ModItems.register(modEventBus);
 
         ModBlocks.register(modEventBus);
+
         ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         ModSounds.register(modEventBus);
 
@@ -75,6 +80,10 @@ public class ModifiedSurvival
         EntityRenderers.register(ModEntityTypes.FAST_MINECART.get(),
                 context -> new MinecartRenderer<>(context, ModelLayers.MINECART));
         EntityRenderers.register(ModEntityTypes.MOTORBOAT.get(), MotorboatRenderer::new);
+
+        MenuScreens.register(ModMenuTypes.RADIATION_TABLE_MENU.get(), RadiationTableScreen::new);
+
+
     }
 
     private void setup(final FMLCommonSetupEvent event) {

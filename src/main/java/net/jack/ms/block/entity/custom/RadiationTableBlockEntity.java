@@ -2,7 +2,9 @@ package net.jack.ms.block.entity.custom;
 
 import net.jack.ms.block.entity.ModBlockEntities;
 import net.jack.ms.item.ModItems;
+import net.jack.ms.screen.RadiationTableMenu;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
@@ -19,16 +21,20 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import org.checkerframework.checker.nullness.qual.NonNull;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.Nonnull;
 import java.util.Random;
 
 public class RadiationTableBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
+    private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -38,7 +44,7 @@ public class RadiationTableBlockEntity extends BlockEntity implements MenuProvid
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
     public RadiationTableBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(ModBlockEntities.RADIATION_TABLE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(ModBlockEntities.RADIATION_TABLE.get(), pWorldPosition, pBlockState);
     }
 
     @Override
@@ -49,7 +55,17 @@ public class RadiationTableBlockEntity extends BlockEntity implements MenuProvid
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return null;
+        return new RadiationTableMenu(pContainerId, pInventory, this);
+    }
+
+
+    @Override
+    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @javax.annotation.Nullable Direction side) {
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+            return lazyItemHandler.cast();
+        }
+
+        return super.getCapability(cap, side);
     }
 
     @Override
@@ -59,7 +75,7 @@ public class RadiationTableBlockEntity extends BlockEntity implements MenuProvid
     }
 
     @Override
-    public void invalidateCaps()  {
+    public void invalidateCaps() {
         super.invalidateCaps();
         lazyItemHandler.invalidate();
     }
@@ -85,9 +101,8 @@ public class RadiationTableBlockEntity extends BlockEntity implements MenuProvid
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState, RadiationTableBlockEntity pBlockEntity) {
-        if(hasRecipe(pBlockEntity) && hasNotReachedStackLimit(pBlockEntity)) {
+        if (hasRecipe(pBlockEntity) && hasNotReachedStackLimit(pBlockEntity)) {
             craftItem(pBlockEntity);
         }
     }
@@ -95,21 +110,19 @@ public class RadiationTableBlockEntity extends BlockEntity implements MenuProvid
     private static void craftItem(RadiationTableBlockEntity entity) {
         entity.itemHandler.extractItem(0, 1, false);
         entity.itemHandler.extractItem(1, 1, false);
-//        entity.itemHandler.getStackInSlot(2).hurt(1, new Random(), null);
 
-        entity.itemHandler.setStackInSlot(2, new ItemStack(ModItems.URANIUM.get(),
-                entity.itemHandler.getStackInSlot(2).getCount() + 1));
+        entity.itemHandler.setStackInSlot(3, new ItemStack(ModItems.URANIUM.get(),
+                entity.itemHandler.getStackInSlot(3).getCount() + 1));
     }
 
     private static boolean hasRecipe(RadiationTableBlockEntity entity) {
-        boolean hasItemInUraniumSlot = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.URANIUM.get();
-        boolean hasItemInLavaSlot = entity.itemHandler.getStackInSlot(1).getItem() == Items.LAVA_BUCKET;
+        boolean hasItemInSecondSlot = entity.itemHandler.getStackInSlot(0).getItem() == Items.LAVA_BUCKET;
+        boolean hasItemInFirstSlot = entity.itemHandler.getStackInSlot(1).getItem() == ModItems.TITANIUM.get();
 
-        return hasItemInUraniumSlot && hasItemInLavaSlot;
+        return hasItemInFirstSlot && hasItemInSecondSlot;
     }
 
     private static boolean hasNotReachedStackLimit(RadiationTableBlockEntity entity) {
         return entity.itemHandler.getStackInSlot(3).getCount() < entity.itemHandler.getStackInSlot(3).getMaxStackSize();
     }
-
 }

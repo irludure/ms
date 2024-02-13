@@ -2,11 +2,13 @@ package net.jack.ms.block;
 
 import net.jack.ms.ModifiedSurvival;
 import net.jack.ms.block.custom.FusionRail;
+import net.jack.ms.block.custom.RadiationTableBlock;
 import net.jack.ms.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
@@ -39,6 +41,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> FUSION_RAIL = registerBlock("fusion_rail",
             () -> new FusionRail(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(2f).lightLevel(reverbLightLevel)), CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> RADIATION_TABLE = registerBlock("radiation_table",
+            () -> new RadiationTableBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()),
+            CreativeModeTab.TAB_INVENTORY);
+
+
 
 
 
