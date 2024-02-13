@@ -1,7 +1,7 @@
 package net.jack.ms.block.custom;
 
 import net.jack.ms.block.entity.ModBlockEntities;
-import net.jack.ms.block.entity.custom.RadiationTableBlockEntity;
+import net.jack.ms.block.entity.RadiationTableBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
@@ -25,7 +25,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.stream.Stream;
@@ -165,6 +164,6 @@ public class RadiationTableBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        return createTickerHelper(pBlockEntityType, ModBlockEntities.RADIATION_TABLE.get(), RadiationTableBlockEntity::tick);
+        return createTickerHelper(pBlockEntityType, ModBlockEntities.COBALT_BLASTER.get(), RadiationTableBlockEntity::tick);
     }
 }

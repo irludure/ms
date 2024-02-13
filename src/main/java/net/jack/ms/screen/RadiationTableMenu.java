@@ -1,10 +1,9 @@
 package net.jack.ms.screen;
 
 import net.jack.ms.block.ModBlocks;
-import net.jack.ms.block.entity.custom.RadiationTableBlockEntity;
-import net.jack.ms.screen.slot.ModLavaFuelSlot;
+import net.jack.ms.block.entity.RadiationTableBlockEntity;
+import net.jack.ms.screen.slot.ModRadiationFuelSlot;
 import net.jack.ms.screen.slot.ModResultSlot;
-import net.jack.ms.screen.slot.ModTitaniumSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -18,26 +17,54 @@ import net.minecraftforge.items.SlotItemHandler;
 public class RadiationTableMenu extends AbstractContainerMenu {
     private final RadiationTableBlockEntity blockEntity;
     private final Level level;
+    private final ContainerData data;
 
     public RadiationTableMenu(int windowId, Inventory inv, FriendlyByteBuf extraData) {
-        this(windowId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()));
+        this(windowId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
 
-    public RadiationTableMenu(int windowId, Inventory inv, BlockEntity entity) {
+    public RadiationTableMenu(int windowId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.RADIATION_TABLE_MENU.get(), windowId);
         checkContainerSize(inv, 4);
         blockEntity = ((RadiationTableBlockEntity) entity);
         this.level = inv.player.level;
+        this.data = data;
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new ModLavaFuelSlot(handler, 0, 18, 50));
-            this.addSlot(new ModTitaniumSlot(handler, 1, 66, 16));
-            this.addSlot(new ModTitaniumSlot(handler, 2, 66, 50));
+            this.addSlot(new ModRadiationFuelSlot(handler, 0, 18, 50));
+            this.addSlot(new SlotItemHandler(handler, 1, 66, 16));
+            this.addSlot(new SlotItemHandler(handler, 2, 66, 50));
             this.addSlot(new ModResultSlot(handler, 3, 114, 33));
         });
+
+        addDataSlots(data);
+    }
+
+    public boolean isCrafting() {
+        return data.get(0) > 0;
+    }
+
+    public boolean hasFuel() {
+        return data.get(2) > 0;
+    }
+
+    public int getScaledProgress() {
+        int progress = this.data.get(0);
+        int maxProgress = this.data.get(1);  // Max Progress
+        int progressArrowSize = 26; // This is the width in pixels of your arrow
+
+        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
+    public int getScaledFuelProgress() {
+        int fuelProgress = this.data.get(2);
+        int maxFuelProgress = this.data.get(3);
+        int fuelProgressSize = 14;
+
+        return maxFuelProgress != 0 ? (int)(((float)fuelProgress / (float)maxFuelProgress) * fuelProgressSize) : 0;
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons

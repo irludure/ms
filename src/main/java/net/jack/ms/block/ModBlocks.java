@@ -43,8 +43,7 @@ public class ModBlocks {
                     .strength(2f).lightLevel(reverbLightLevel)), CreativeModeTab.TAB_MISC);
 
     public static final RegistryObject<Block> RADIATION_TABLE = registerBlock("radiation_table",
-            () -> new RadiationTableBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()),
-            CreativeModeTab.TAB_INVENTORY);
+            () -> new RadiationTableBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)), CreativeModeTab.TAB_MISC);
 
 
 

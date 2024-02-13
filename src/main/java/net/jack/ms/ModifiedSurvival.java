@@ -2,13 +2,16 @@ package net.jack.ms;
 
 import com.mojang.logging.LogUtils;
 import net.jack.ms.ai.SlaveVillager;
+import net.jack.ms.bentityrecipes.BEntityRecipes;
+import net.jack.ms.bentityrecipes.custom.UraniumRadiationTableRecipe;
 import net.jack.ms.block.ModBlocks;
+//import net.jack.ms.block.entity.ModBlockEntities;
 import net.jack.ms.block.entity.ModBlockEntities;
 import net.jack.ms.entity.ModEntityTypes;
 import net.jack.ms.entity.client.*;
 import net.jack.ms.item.ModItems;
+//import net.jack.ms.screen.ModMenuTypes;
 import net.jack.ms.screen.ModMenuTypes;
-import net.jack.ms.screen.RadiationTableScreen;
 import net.jack.ms.sound.ModSounds;
 import net.jack.ms.util.world.feature.OreFeature;
 import net.jack.ms.vehicle.ReplaceMinecarts;
@@ -47,14 +50,17 @@ public class ModifiedSurvival
 
         ModItems.register(modEventBus);
 
-        ModBlocks.register(modEventBus);
+        BEntityRecipes.RADIATION_TABLE.add(new UraniumRadiationTableRecipe());
 
-        ModBlockEntities.register(modEventBus);
-        ModMenuTypes.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         ModSounds.register(modEventBus);
 
         ModEntityTypes.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+//        ModRecipes.register(modEventBus);
 
 
         modEventBus.addListener(this::setup);
@@ -81,7 +87,7 @@ public class ModifiedSurvival
                 context -> new MinecartRenderer<>(context, ModelLayers.MINECART));
         EntityRenderers.register(ModEntityTypes.MOTORBOAT.get(), MotorboatRenderer::new);
 
-        MenuScreens.register(ModMenuTypes.RADIATION_TABLE_MENU.get(), RadiationTableScreen::new);
+//        MenuScreens.register(ModMenuTypes.RADIATION_TABLE_MENU.get(), RadiationTableScreen::new);
 
 
     }
